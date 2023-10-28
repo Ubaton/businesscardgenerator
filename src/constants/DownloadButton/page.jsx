@@ -1,5 +1,6 @@
 import React from "react";
 import * as htmlToImage from "html-to-image";
+// import ShareSVG from "../ShareSVG/page";
 
 const DownloadButton = ({ cardRef }) => {
   const handleDownload = () => {
@@ -20,12 +21,19 @@ const DownloadButton = ({ cardRef }) => {
   };
 
   return (
-    <button
-      onClick={handleDownload}
-      className="bg-blue-500 text-white p-2 rounded-lg"
-    >
-      Download Business Card
-    </button>
+    <div className="flex flex-row items-center justify-center">
+      <div>
+        <button
+          onClick={handleDownload}
+          className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-2 px-4 rounded-full"
+        >
+          Download Card
+        </button>
+      </div>
+      {/* <div>
+        <ShareSVG />
+      </div> */}
+    </div>
   );
 };
 
