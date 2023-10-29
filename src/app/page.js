@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import BusinessCard from "@/components/BusinessCard/page";
 import BusinessCardForm from "@/components/BusinessCardForm/page";
-import Pettens from "@/constants/Petten/page";
+import Pettens from "../../public/assets/images/Patten.png";
+import Image from "next/image";
 
 export default function Home() {
   const handleFormSubmit = (formData) => {
@@ -30,7 +31,7 @@ export default function Home() {
         <BusinessCard {...formData} />
       </div>
       <div className="fixed left-0 top-0">
-        <Pettens />
+        <Image src={Pettens} alt="" />
       </div>
       <p className="fixed bottom-4 text-xs">
         Powered By Creative Mind Graphics (Pty) Ltd | All Right Reserved
