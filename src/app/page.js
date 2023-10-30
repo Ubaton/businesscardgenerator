@@ -31,7 +31,7 @@ export default function Home() {
         <BusinessCard {...formData} />
       </div>
       <div className="fixed left-0 top-0">
-        <Image src={Pettens} alt="" />
+        <Image src={Pettens} alt="" priority={true} />
       </div>
       <p className="fixed bottom-4 text-xs">
         Powered By Creative Mind Graphics (Pty) Ltd | All Right Reserved

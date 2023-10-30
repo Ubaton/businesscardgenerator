@@ -1,5 +1,5 @@
 import DownloadButton from "@/constants/DownloadButton/page";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const styleOptions = [
@@ -22,6 +22,16 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   ];
 
   const [selectedStyle, setSelectedStyle] = useState(styleOptions[0]);
+
+  useEffect(() => {
+    // When the component mounts on the client side, update the class
+    const clientSelectedStyle = styleOptions.find(
+      (style) => style === selectedStyle
+    );
+    if (clientSelectedStyle) {
+      setSelectedStyle(clientSelectedStyle);
+    }
+  }, [selectedStyle]);
 
   return (
     <div className="flex flex-row gap-10">
@@ -64,6 +74,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                   src={URL.createObjectURL(logo)}
                   alt="Logo"
                   className="mx-auto h-16"
+                  priority={true}
                 />
               )}
             </div>
@@ -78,6 +89,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                 src={URL.createObjectURL(logo)}
                 alt="Logo"
                 className="mx-auto h-32"
+                priority={true}
               />
             )}
           </div>
