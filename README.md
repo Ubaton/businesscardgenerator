@@ -1,3 +1,8 @@
+## Business Card Generator
+![Business Card Generator Image](https://github.com/Ubaton/businesscardgenerator/blob/master/public/assets/images/Business%20Card%20Generator.PNG)
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
