@@ -5,7 +5,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const styleOptions = [
     {
       name: "Style 1",
-      className: "bg-amber-500 p-4 rounded-lg shadow-md",
+      className: "bg-violet-500 p-4 rounded-lg shadow-md",
     },
     {
       name: "Style 2",
@@ -29,7 +29,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
     },
     {
       name: "Style 7",
-      className: "bg-violet-500 p-4 rounded-lg shadow-md",
+      className: "bg-amber-500 p-4 rounded-lg shadow-md",
     },
   ];
 
@@ -39,9 +39,9 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const scrollStyleOptions = styleOptions.slice(0, itemsToShow);
 
   const handleMouseWheel = (e) => {
-    const element = document.querySelector(".style-carousel"); // Replace with your actual element selector
+    const element = document.querySelector(".style-carousel");
     if (element) {
-      element.scrollTop += e.deltaY; // Scroll vertically based on mouse wheel
+      element.scrollTop += e.deltaY;
       e.preventDefault();
     }
   };
