@@ -2,6 +2,8 @@ import DownloadButton from "@/constants/DownloadButton/page";
 import React, { useState, useEffect, useRef } from "react";
 import styleOptions from "./StyleOptions/stylesOptions.js";
 import Image from "next/image";
+import { LuChevronDownCircle } from "react-icons/lu";
+import { LuChevronUpCircle } from "react-icons/lu";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const cardRef = useRef();
@@ -27,34 +29,58 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
     }
   }, [selectedStyle]);
 
+  const moveItemsUp = () => {
+    const element = document.querySelector(".style-carousel");
+    if (element) {
+      element.scrollTop -= 70;
+    }
+  };
+
+  const moveItemsDown = () => {
+    const element = document.querySelector(".style-carousel");
+    if (element) {
+      element.scrollTop += 70;
+    }
+  };
+
   return (
     <div className="flex flex-row justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="flex flex-col justify-center items-center">
-          <div
-            className="style-carousel space-y-4"
-            onWheel={handleMouseWheel}
-            style={{
-              overflowY: "hidden",
-              height: "450px",
-            }}
-          >
-            {scrollStyleOptions.map((style, index) => (
-              <div
-                key={index}
-                className={`h-24 w-52 cursor-pointer ${
-                  style.className
-                } border border-black rounded-md ${
-                  selectedStyle === style
-                    ? "border-blue-600"
-                    : "border-transparent"
-                }`}
-                onClick={() => setSelectedStyle(style)}
-              >
-                {style.name}
-              </div>
-            ))}
+        <div className="flex flex-row items-center justify-center gap-5">
+          <LuChevronDownCircle
+            className="md:hidden text-2xl"
+            onClick={moveItemsDown}
+          />
+          <div className="flex flex-col justify-center items-center">
+            <div
+              className="style-carousel space-y-4"
+              onWheel={handleMouseWheel}
+              style={{
+                overflowY: "hidden",
+                height: "450px",
+              }}
+            >
+              {scrollStyleOptions.map((style, index) => (
+                <div
+                  key={index}
+                  className={`h-24 w-52 cursor-pointer ${
+                    style.className
+                  } border border-black rounded-md ${
+                    selectedStyle === style
+                      ? "border-blue-600"
+                      : "border-transparent"
+                  }`}
+                  onClick={() => setSelectedStyle(style)}
+                >
+                  {style.name}
+                </div>
+              ))}
+            </div>
           </div>
+          <LuChevronUpCircle
+            className="md:hidden text-2xl"
+            onClick={moveItemsUp}
+          />
         </div>
         <div className="w-auto py-4 space-y-6">
           <div className="space-y-6" ref={cardRef}>

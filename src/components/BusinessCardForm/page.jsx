@@ -35,7 +35,7 @@ const BusinessCardForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col justify-center items-center text-zinc-700 w-auto"
+      className="flex flex-col justify-center items-center text-zinc-700 w-auto pb-4"
     >
       <div className="mb-4 rounded-xl bg-gradient-to-t from-blue-200 to-purple-200 border-4 border-purple-600">
         <div className="relative">
