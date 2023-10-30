@@ -1,5 +1,5 @@
 import DownloadButton from "@/constants/DownloadButton/page";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const styleOptions = [
@@ -33,6 +33,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
     },
   ];
 
+  const cardRef = useRef();
   const [selectedStyle, setSelectedStyle] = useState(styleOptions[0]);
   const itemsToShow = 50;
 
@@ -86,47 +87,49 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
           </div>
         </div>
         <div className="w-auto py-4 space-y-6">
-          <div
-            className={`flex items-center w-[360px] h-[180px] ${selectedStyle.className}`}
-          >
-            <div className="flex flex-row items-center">
-              <div className="text-zinc-900 space-y-1 ">
-                <p className="text-md font-bold">{company}</p>
-                <h2 className="text-md ">{name}</h2>
-                <p className="text-md">{title}</p>
-                <p className="text-md"> {phone}</p>
-                <p className="text-md">{email}</p>
-              </div>
+          <div className="space-y-6" ref={cardRef}>
+            <div
+              className={`flex items-center w-[360px] h-[180px] ${selectedStyle.className}`}
+            >
+              <div className="flex flex-row items-center">
+                <div className="text-zinc-900 space-y-1 ">
+                  <p className="text-md font-bold">{company}</p>
+                  <h2 className="text-md ">{name}</h2>
+                  <p className="text-md">{title}</p>
+                  <p className="text-md"> {phone}</p>
+                  <p className="text-md">{email}</p>
+                </div>
 
-              <div className="p-4">
+                <div className="p-4">
+                  {logo && (
+                    <img
+                      src={URL.createObjectURL(logo)}
+                      alt="Logo"
+                      className="mx-auto w-16"
+                      priority={true}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            <div
+              className={`flex flex-col items-center justify-center w-[360px] h-[180px] ${selectedStyle.className}`}
+            >
+              <div className="flex flex-row items-center">
                 {logo && (
                   <img
                     src={URL.createObjectURL(logo)}
                     alt="Logo"
-                    className="mx-auto h-16"
+                    className="mx-auto h-32"
                     priority={true}
                   />
                 )}
               </div>
+              <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
             </div>
-          </div>
-          <div
-            className={`flex flex-col items-center justify-center w-[360px] h-[180px] ${selectedStyle.className}`}
-          >
-            <div className="flex flex-row items-center">
-              {logo && (
-                <img
-                  src={URL.createObjectURL(logo)}
-                  alt="Logo"
-                  className="mx-auto h-32"
-                  priority={true}
-                />
-              )}
-            </div>
-            <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
           </div>
           <div className="flex items-center justify-center">
-            <DownloadButton />
+            <DownloadButton cardRef={cardRef} />
           </div>
         </div>
       </div>
