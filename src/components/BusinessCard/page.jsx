@@ -1,38 +1,8 @@
 import DownloadButton from "@/constants/DownloadButton/page";
 import React, { useState, useEffect, useRef } from "react";
+import styleOptions from "./StyleOptions/stylesOptions.json";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
-  const styleOptions = [
-    {
-      name: "Style 1",
-      className: "bg-violet-500 p-4 rounded-lg shadow-md",
-    },
-    {
-      name: "Style 2",
-      className: "bg-blue-500 p-4 rounded-lg shadow-md",
-    },
-    {
-      name: "Style 3",
-      className: "bg-gray-500 p-4 rounded-lg shadow-md",
-    },
-    {
-      name: "Style 4",
-      className: "bg-rose-500 p-4 rounded-lg shadow-md",
-    },
-    {
-      name: "Style 5",
-      className: "bg-gray-50 p-4 rounded-lg shadow-md",
-    },
-    {
-      name: "Style 6",
-      className: "bg-red-500 p-4 rounded-lg shadow-md",
-    },
-    {
-      name: "Style 7",
-      className: "bg-amber-500 p-4 rounded-lg shadow-md",
-    },
-  ];
-
   const cardRef = useRef();
   const [selectedStyle, setSelectedStyle] = useState(styleOptions[0]);
   const itemsToShow = 50;
@@ -89,18 +59,18 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
         <div className="w-auto py-4 space-y-6">
           <div className="space-y-6" ref={cardRef}>
             <div
-              className={`flex items-center w-[360px] h-[180px] ${selectedStyle.className}`}
+              className={`flex items-center w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
-                <div className="text-zinc-900 space-y-1 ">
-                  <p className="text-md font-bold">{company}</p>
-                  <h2 className="text-md ">{name}</h2>
-                  <p className="text-md">{title}</p>
-                  <p className="text-md"> {phone}</p>
-                  <p className="text-md">{email}</p>
+                <div className="text-zinc-900 space-y-2 ">
+                  <p className="text-lg font-bold">{company}</p>
+                  <h2 className="text-sm">{name}</h2>
+                  <p className="text-sm">{title}</p>
+                  <p className="text-sm"> {phone}</p>
+                  <p className="text-sm">{email}</p>
                 </div>
 
-                <div className="p-2">
+                <div className="p-1">
                   {logo && (
                     <img
                       src={URL.createObjectURL(logo)}
@@ -113,7 +83,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               </div>
             </div>
             <div
-              className={`flex flex-col items-center justify-center w-[360px] h-[180px] ${selectedStyle.className}`}
+              className={`flex flex-col items-center justify-center w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
                 {logo && (

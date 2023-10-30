@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Style 1",
+    "className": "bg-violet-500 p-4 rounded-lg shadow-md"
+  },
+  {
+    "name": "Style 2",
+    "className": "bg-blue-500 p-4 rounded-lg shadow-md"
+  },
+  {
+    "name": "Style 3",
+    "className": "bg-gray-500 p-4 rounded-lg shadow-md"
+  },
+  {
+    "name": "Style 4",
+    "className": "bg-rose-500 p-4 rounded-lg shadow-md"
+  },
+  {
+    "name": "Style 5",
+    "className": "bg-gray-50 p-4 rounded-lg shadow-md"
+  },
+  {
+    "name": "Style 6",
+    "className": "bg-red-500 p-4 rounded-lg shadow-md"
+  },
+  {
+    "name": "Style 7",
+    "className": "bg-amber-500 p-4 rounded-lg shadow-md"
+  }
+]
