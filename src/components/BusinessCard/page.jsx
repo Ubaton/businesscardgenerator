@@ -1,6 +1,7 @@
 import DownloadButton from "@/constants/DownloadButton/page";
 import React, { useState, useEffect, useRef } from "react";
 import styleOptions from "./StyleOptions/stylesOptions.json";
+import Image from "next/image";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const cardRef = useRef();
@@ -27,9 +28,9 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   }, [selectedStyle]);
 
   return (
-    <div className="flex flex-row justify-center items-center gap-10">
+    <div className="flex flex-row justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="flex flex-col justify-center items-center mt-4">
+        <div className="flex flex-col justify-center items-center">
           <div
             className="style-carousel space-y-4"
             onWheel={handleMouseWheel}
@@ -71,10 +72,12 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
 
                 <div className="p-1">
                   {logo && (
-                    <img
+                    <Image
                       src={URL.createObjectURL(logo)}
                       alt="Logo"
-                      className="mx-auto w-24"
+                      className="mx-auto"
+                      width={96}
+                      height={96}
                       priority={true}
                     />
                   )}
@@ -86,10 +89,12 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
             >
               <div className="flex flex-row items-center">
                 {logo && (
-                  <img
+                  <Image
                     src={URL.createObjectURL(logo)}
                     alt="Logo"
-                    className="mx-auto h-32"
+                    className="mx-auto"
+                    width={128}
+                    height={128}
                     priority={true}
                   />
                 )}
