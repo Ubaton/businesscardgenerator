@@ -1,4 +1,4 @@
-![Business Card Generator Image](https://github.com/Ubaton/QRCode/blob/master/src/assets/images/CMG_QRcodeG.png)
+![Business Card Generator Image](https://github.com/Ubaton/businesscardgenerator/tree/master/src)
 
 
 
