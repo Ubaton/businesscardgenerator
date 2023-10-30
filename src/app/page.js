@@ -5,11 +5,11 @@ import BusinessCard from "@/components/BusinessCard/page";
 import BusinessCardForm from "@/components/BusinessCardForm/page";
 import Pettens from "../../public/assets/images/Patten.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const handleFormSubmit = (formData) => {
     setFormData(formData);
-    console.log("Form Data:", formData);
   };
 
   // State to store form data
@@ -33,8 +33,15 @@ export default function Home() {
       <div className="fixed left-0 top-0">
         <Image src={Pettens} alt="" priority={true} />
       </div>
+
       <p className="fixed bottom-4 text-xs">
-        Powered By Creative Mind Graphics (Pty) Ltd | All Right Reserved
+        Powered By{" "}
+        <span className=" hover:text-violet-500 ">
+          <Link href="https://creativemg.netlify.app/">
+            Creative Mind Graphics (Pty) Ltd
+          </Link>
+        </span>{" "}
+        | All Right Reserved
       </p>
     </main>
   );
