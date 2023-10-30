@@ -100,12 +100,12 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                   <p className="text-md">{email}</p>
                 </div>
 
-                <div className="p-4">
+                <div className="p-2">
                   {logo && (
                     <img
                       src={URL.createObjectURL(logo)}
                       alt="Logo"
-                      className="mx-auto w-16"
+                      className="mx-auto w-24"
                       priority={true}
                     />
                   )}
