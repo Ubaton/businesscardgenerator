@@ -13,7 +13,6 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
     const element = document.querySelector(".style-carousel");
     if (element) {
       element.scrollTop += e.deltaY;
-      e.preventDefault();
     }
   };
 
