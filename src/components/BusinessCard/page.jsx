@@ -1,6 +1,6 @@
 import DownloadButton from "@/constants/DownloadButton/page";
 import React, { useState, useEffect, useRef } from "react";
-import styleOptions from "./StyleOptions/stylesOptions.json";
+import styleOptions from "./StyleOptions/stylesOptions.js";
 import Image from "next/image";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {

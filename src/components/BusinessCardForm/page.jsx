@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { BsPlusCircle } from "react-icons/bs";
+import {
+  BsBuildings,
+  BsPerson,
+  BsEnvelopeAt,
+  BsTelephone,
+  BsStar,
+} from "react-icons/bs";
 
 const BusinessCardForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -89,7 +95,7 @@ const BusinessCardForm = ({ onSubmit }) => {
         </div>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 relative">
         <input
           type="text"
           name="company"
@@ -99,9 +105,10 @@ const BusinessCardForm = ({ onSubmit }) => {
           onChange={handleInputChange}
           className="w-full border rounded-lg p-2"
         />
+        <BsBuildings className="absolute right-4 top-3 text-zinc-400" />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 relative">
         <input
           type="text"
           name="title"
@@ -111,9 +118,10 @@ const BusinessCardForm = ({ onSubmit }) => {
           onChange={handleInputChange}
           className="w-full border rounded-lg p-2"
         />
+        <BsStar className="absolute right-4 top-3 text-zinc-400" />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 relative">
         <input
           type="text"
           name="name"
@@ -123,9 +131,10 @@ const BusinessCardForm = ({ onSubmit }) => {
           onChange={handleInputChange}
           className="w-full border rounded-lg p-2"
         />
+        <BsPerson className="absolute right-4 top-3 text-zinc-400" />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 relative">
         <input
           type="text"
           name="phone"
@@ -135,9 +144,10 @@ const BusinessCardForm = ({ onSubmit }) => {
           onChange={handleInputChange}
           className="w-full border rounded-lg p-2"
         />
+        <BsTelephone className="absolute right-4 top-3 text-zinc-400" />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 relative">
         <input
           type="email"
           name="email"
@@ -147,6 +157,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           onChange={handleInputChange}
           className="w-full border rounded-lg p-2"
         />
+        <BsEnvelopeAt className="absolute right-4 top-3 text-zinc-400" />
       </div>
 
       <button
