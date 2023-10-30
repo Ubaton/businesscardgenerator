@@ -19,9 +19,32 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
       name: "Style 4",
       className: "bg-rose-500 p-4 rounded-lg shadow-md",
     },
+    {
+      name: "Style 5",
+      className: "bg-gray-50 p-4 rounded-lg shadow-md",
+    },
+    {
+      name: "Style 6",
+      className: "bg-red-500 p-4 rounded-lg shadow-md",
+    },
+    {
+      name: "Style 7",
+      className: "bg-violet-500 p-4 rounded-lg shadow-md",
+    },
   ];
 
   const [selectedStyle, setSelectedStyle] = useState(styleOptions[0]);
+  const itemsToShow = 50;
+
+  const scrollStyleOptions = styleOptions.slice(0, itemsToShow);
+
+  const handleMouseWheel = (e) => {
+    const element = document.querySelector(".style-carousel"); // Replace with your actual element selector
+    if (element) {
+      element.scrollTop += e.deltaY; // Scroll vertically based on mouse wheel
+      e.preventDefault();
+    }
+  };
 
   useEffect(() => {
     // When the component mounts on the client side, update the class
@@ -34,69 +57,77 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   }, [selectedStyle]);
 
   return (
-    <div className="flex flex-row gap-10">
-      <div className="mt-4">
-        <p className="text-center">Style Selection</p>
-        <div className="flex flex-col justify-center items-center space-x-4 space-y-4">
-          {styleOptions.map((style, index) => (
-            <div
-              key={index}
-              className={`h-24 w-52 cursor-pointer ${
-                style.className
-              } border border-black rounded-md ${
-                selectedStyle === style
-                  ? "border-blue-600"
-                  : "border-transparent"
-              }`}
-              onClick={() => setSelectedStyle(style)}
-            >
-              {style.name}
-            </div>
-          ))}
+    <div className="flex flex-row justify-center items-center gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="flex flex-col justify-center items-center mt-4">
+          <div
+            className="style-carousel space-y-4"
+            onWheel={handleMouseWheel}
+            style={{
+              overflowY: "hidden",
+              height: "450px",
+            }}
+          >
+            {scrollStyleOptions.map((style, index) => (
+              <div
+                key={index}
+                className={`h-24 w-52 cursor-pointer ${
+                  style.className
+                } border border-black rounded-md ${
+                  selectedStyle === style
+                    ? "border-blue-600"
+                    : "border-transparent"
+                }`}
+                onClick={() => setSelectedStyle(style)}
+              >
+                {style.name}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="w-auto p-4 space-y-6">
-        <div
-          className={`flex items-center w-[390px] h-[200px] ${selectedStyle.className}`}
-        >
-          <div className="flex flex-row items-center">
-            <div className="text-zinc-900 space-y-1 ">
-              <p className="text-md font-bold">{company}</p>
-              <h2 className="text-md ">{name}</h2>
-              <p className="text-md">{title}</p>
-              <p className="text-md"> {phone}</p>
-              <p className="text-md">{email}</p>
-            </div>
+        <div className="w-auto py-4 space-y-6">
+          <div
+            className={`flex items-center w-[360px] h-[180px] ${selectedStyle.className}`}
+          >
+            <div className="flex flex-row items-center">
+              <div className="text-zinc-900 space-y-1 ">
+                <p className="text-md font-bold">{company}</p>
+                <h2 className="text-md ">{name}</h2>
+                <p className="text-md">{title}</p>
+                <p className="text-md"> {phone}</p>
+                <p className="text-md">{email}</p>
+              </div>
 
-            <div className="p-4">
+              <div className="p-4">
+                {logo && (
+                  <img
+                    src={URL.createObjectURL(logo)}
+                    alt="Logo"
+                    className="mx-auto h-16"
+                    priority={true}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+          <div
+            className={`flex flex-col items-center justify-center w-[360px] h-[180px] ${selectedStyle.className}`}
+          >
+            <div className="flex flex-row items-center">
               {logo && (
                 <img
                   src={URL.createObjectURL(logo)}
                   alt="Logo"
-                  className="mx-auto h-16"
+                  className="mx-auto h-32"
                   priority={true}
                 />
               )}
             </div>
+            <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
           </div>
-        </div>
-        <div
-          className={`flex flex-col items-center justify-center w-[390px] h-[200px] ${selectedStyle.className}`}
-        >
-          <div className="flex flex-row items-center">
-            {logo && (
-              <img
-                src={URL.createObjectURL(logo)}
-                alt="Logo"
-                className="mx-auto h-32"
-                priority={true}
-              />
-            )}
+          <div className="flex items-center justify-center">
+            <DownloadButton />
           </div>
-          <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
-        </div>
-        <div className="flex items-center justify-center">
-          <DownloadButton />
         </div>
       </div>
     </div>

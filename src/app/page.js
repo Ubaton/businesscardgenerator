@@ -26,7 +26,7 @@ export default function Home() {
         Business Card Generator
       </h1>
 
-      <div className="z-10 max-w-5xl w-full items-center justify-between lg:flex bg-zinc-800 rounded-xl">
+      <div className="z-10 max-w-5xl w-full items-center justify-between lg:flex bg-zinc-800 rounded-xl px-8 py-1">
         <BusinessCardForm onSubmit={handleFormSubmit} />
         <BusinessCard {...formData} />
       </div>
