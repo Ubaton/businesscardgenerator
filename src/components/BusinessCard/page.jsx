@@ -99,7 +99,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                   />
                 )}
               </div>
-              <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
+              <p className="text-xl font-bold text-zinc-900 pt-2">{company}</p>
             </div>
           </div>
           <div className="flex items-center justify-center">
