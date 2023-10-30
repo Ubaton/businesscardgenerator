@@ -1,4 +1,4 @@
-![Business Card Generator Image](https://github.com/Ubaton/businesscardgenerator/tree/master/src)
+![Business Card Generator Image](https://github.com/Ubaton/businesscardgenerator/blob/master/public/assets/images/Business%20Card%20Generator.PNG)
 
 
 
