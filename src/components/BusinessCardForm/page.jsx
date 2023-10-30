@@ -29,7 +29,7 @@ const BusinessCardForm = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col justify-center items-center text-zinc-700"
+      className="flex flex-col justify-center items-center text-zinc-700 w-auto"
     >
       <div className="mb-4 rounded-xl bg-gradient-to-t from-blue-200 to-purple-200 border-4 border-purple-600">
         <div className="relative">
@@ -43,7 +43,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           />
           <label
             htmlFor="fileInput"
-            className="w-[230px] p-2 h-[150px] flex flex-col items-center justify-center rounded-md cursor-pointer"
+            className="w-[230px] p-2 h-[150px] flex flex-col items-center justify-center rounded-xl cursor-pointer"
           >
             {formData.logo ? (
               <img

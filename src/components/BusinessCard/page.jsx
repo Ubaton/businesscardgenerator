@@ -59,7 +59,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
         <div className="w-auto py-4 space-y-6">
           <div className="space-y-6" ref={cardRef}>
             <div
-              className={`flex items-center w-[320px] h-[180px] ${selectedStyle.className}`}
+              className={`flex items-center rounded-2xl w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
                 <div className="text-zinc-900 space-y-2 ">
@@ -85,7 +85,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               </div>
             </div>
             <div
-              className={`flex flex-col items-center justify-center w-[320px] h-[180px] ${selectedStyle.className}`}
+              className={`flex flex-col items-center rounded-2xl justify-center w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
                 {logo && (
@@ -99,7 +99,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                   />
                 )}
               </div>
-              <p className="text-xl font-bold text-zinc-900 pt-2">{company}</p>
+              <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
             </div>
           </div>
           <div className="flex items-center justify-center">
