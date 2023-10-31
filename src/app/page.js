@@ -27,12 +27,18 @@ export default function Home() {
         Business Card Generator
       </h1>
 
-      <div className="z-10 max-w-5xl w-full items-center justify-between lg:flex bg-zinc-800 border-2 border-purple-600 rounded-3xl p-4">
+      <div className="z-10 max-w-5xl lg:flex bg-zinc-800 border-2 border-purple-600 rounded-3xl px-4 pt-4 pb-0">
         <BusinessCardForm onSubmit={handleFormSubmit} />
         <BusinessCard {...formData} />
       </div>
       <div className="fixed left-0 top-0">
-        <Image src={Pettens} alt="" priority={true} />
+        <Image
+          src={Pettens}
+          alt="Petten"
+          priority={true}
+          width={"full"}
+          height={"100vh"}
+        />
       </div>
 
       <footer className="fixed bottom-4 text-center text-sm text-zinc-500">

@@ -11,6 +11,8 @@ import {
   BsTelephone,
   BsStar,
 } from "react-icons/bs";
+import ShareSVG from "@/constants/ShareSVG/page.jsx";
+import * as htmlToImage from "html-to-image";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const cardRef = useRef();
@@ -50,10 +52,22 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
     }
   };
 
+  // Function to capture the Business Card as an image
+  const captureBusinessCardImage = () => {
+    if (cardRef.current) {
+      htmlToImage
+        .toPng(cardRef.current)
+        .then((dataUrl) => {})
+        .catch((error) => {
+          alert.error("Failed to capture the image:", error);
+        });
+    }
+  };
+
   return (
     <div className="flex flex-row justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="flex flex-row items-center justify-center gap-5">
+        <div className="flex flex-row items-center justify-center gap-5 pb-4">
           <LuChevronDownCircle
             className="md:hidden text-2xl"
             onClick={moveItemsDown}
@@ -64,7 +78,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               onWheel={handleMouseWheel}
               style={{
                 overflowY: "hidden",
-                height: "450px",
+                height: "520px",
               }}
             >
               {scrollStyleOptions.map((style, index) => (
@@ -89,8 +103,9 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
             onClick={moveItemsUp}
           />
         </div>
-        <div className="w-auto py-4 space-y-6">
+        <div className="w-auto space-y-6">
           <div className="space-y-6" ref={cardRef}>
+            {/* The Front of your Business Card */}
             <div
               className={`flex items-center rounded-2xl w-[320px] h-[180px] ${selectedStyle.className}`}
             >
@@ -129,6 +144,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                 </div>
               </div>
             </div>
+            {/* The back of the Business Card */}
             <div
               className={`flex flex-col items-center rounded-2xl justify-center w-[320px] h-[180px] ${selectedStyle.className}`}
             >
@@ -150,6 +166,12 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
           <div className="flex items-center justify-center">
             <DownloadButton cardRef={cardRef} />
           </div>
+          <span
+            className="flex items-center justify-end"
+            onClick={captureBusinessCardImage}
+          >
+            <ShareSVG />
+          </span>
         </div>
       </div>
     </div>

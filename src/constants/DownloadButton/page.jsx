@@ -1,6 +1,5 @@
 import React from "react";
 import * as htmlToImage from "html-to-image";
-// import ShareSVG from "../ShareSVG/page";
 
 const DownloadButton = ({ cardRef }) => {
   const handleDownload = () => {
@@ -30,9 +29,6 @@ const DownloadButton = ({ cardRef }) => {
           Download Card
         </button>
       </div>
-      {/* <div>
-        <ShareSVG />
-      </div> */}
     </div>
   );
 };
