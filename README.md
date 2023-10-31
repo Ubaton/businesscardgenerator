@@ -1,6 +1,6 @@
 # Business Card Generator
 
-###Logo
+### Logo
 <span style="display: inline-block; width: 50px; height: 50px;">
   <img src="https://github.com/Ubaton/businesscardgenerator/blob/master/public/assets/images/Business%20Card%20Generator%20Logo.PNG" alt="Business Card Generator Logo" width="50" height="50"> 
 </span>
