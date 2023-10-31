@@ -17,6 +17,7 @@ export default function Home() {
     name: "",
     title: "",
     company: "",
+    phone: "",
     email: "",
   });
 
@@ -26,7 +27,7 @@ export default function Home() {
         Business Card Generator
       </h1>
 
-      <div className="z-10 max-w-5xl w-full items-center justify-between lg:flex bg-zinc-800 rounded-xl p-4">
+      <div className="z-10 max-w-5xl w-full items-center justify-between lg:flex bg-zinc-800 border-2 border-purple-600 rounded-3xl p-4">
         <BusinessCardForm onSubmit={handleFormSubmit} />
         <BusinessCard {...formData} />
       </div>

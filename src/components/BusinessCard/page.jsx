@@ -72,7 +72,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                   key={index}
                   className={`h-24 w-52 cursor-pointer ${
                     style.className
-                  } border border-black rounded-md ${
+                  } border border-black rounded-xl ${
                     selectedStyle === style
                       ? "border-blue-600"
                       : "border-transparent"
