@@ -1,8 +1,9 @@
 # Business Card Generator
 
-<span width="50" hight="50">
-![Business Card Generator Logo](https://github.com/Ubaton/businesscardgenerator/blob/master/public/assets/images/Business%20Card%20Generator%20Logo.PNG)
+<span style="display: inline-block; width: 50px; height: 50px;">
+  <img src="https://github.com/Ubaton/businesscardgenerator/blob/master/public/assets/images/Business%20Card%20Generator%20Logo.PNG" alt="Business Card Generator Logo" width="50" height="50">
 </span>
+
 
 The Business Card Generator is a web application that allows you to create professional business card designs with various styles. It offers a simple and user-friendly interface for customizing your business card and then downloading it for printing or digital use.
 
