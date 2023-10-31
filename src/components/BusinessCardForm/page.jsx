@@ -5,6 +5,7 @@ import {
   BsEnvelopeAt,
   BsTelephone,
   BsStar,
+  BsStars,
 } from "react-icons/bs";
 
 const BusinessCardForm = ({ onSubmit }) => {
@@ -164,7 +165,10 @@ const BusinessCardForm = ({ onSubmit }) => {
         type="submit"
         className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-2 px-4 rounded-full"
       >
-        Generate Card
+        <span className="flex flex-row items-center gap-2">
+          Generate Card
+          <BsStars />
+        </span>
       </button>
     </form>
   );

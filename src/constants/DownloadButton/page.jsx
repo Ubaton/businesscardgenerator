@@ -1,5 +1,7 @@
 import React from "react";
 import * as htmlToImage from "html-to-image";
+import { BsDownload } from "react-icons/bs";
+BsDownload;
 
 const DownloadButton = ({ cardRef }) => {
   const handleDownload = () => {
@@ -26,7 +28,10 @@ const DownloadButton = ({ cardRef }) => {
           onClick={handleDownload}
           className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-2 px-4 rounded-full"
         >
-          Download Card
+          <span className="flex flex-row items-center gap-2">
+            Download Card
+            <BsDownload />
+          </span>
         </button>
       </div>
     </div>
