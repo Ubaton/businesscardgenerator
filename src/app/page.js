@@ -21,7 +21,7 @@ export default function Home() {
   });
 
   return (
-    <main className="flex flex-col min-h-screen items-center justify-between pb-16">
+    <main className="flex flex-col min-h-screen items-center justify-between pb-12">
       <h1 className="text-4xl text-center font-semibold text-transparent bg-gradient-to-r from-purple-400 via-purple-600 to-purple-900 bg-clip-text">
         Business Card Generator
       </h1>
@@ -34,15 +34,16 @@ export default function Home() {
         <Image src={Pettens} alt="" priority={true} />
       </div>
 
-      <p className="fixed bottom-4 text-xs">
+      <footer className="fixed bottom-4 text-center text-sm text-zinc-500">
         Powered By{" "}
-        <span className=" hover:text-violet-500 ">
-          <Link href="https://creativemg.netlify.app/">
-            Creative Mind Graphics (Pty) Ltd
-          </Link>
-        </span>{" "}
-        | All Right Reserved
-      </p>
+        <Link
+          href="https://creativemg.netlify.app/"
+          className="text-violet-500 hover:underline"
+        >
+          Creative Mind Graphics (Pty) Ltd
+        </Link>{" "}
+        | Copyright © 2023, All Rights Reserved
+      </footer>
     </main>
   );
 }

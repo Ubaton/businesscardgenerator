@@ -4,6 +4,13 @@ import styleOptions from "./StyleOptions/stylesOptions.js";
 import Image from "next/image";
 import { LuChevronDownCircle } from "react-icons/lu";
 import { LuChevronUpCircle } from "react-icons/lu";
+import {
+  BsBuildings,
+  BsPerson,
+  BsEnvelopeAt,
+  BsTelephone,
+  BsStar,
+} from "react-icons/bs";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const cardRef = useRef();
@@ -88,12 +95,24 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               className={`flex items-center rounded-2xl w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
-                <div className="text-zinc-900 space-y-2 ">
-                  <p className="text-lg font-bold">{company}</p>
-                  <h2 className="text-sm">{name}</h2>
-                  <p className="text-sm">{title}</p>
-                  <p className="text-sm"> {phone}</p>
-                  <p className="text-sm">{email}</p>
+                <div className="text-zinc-900 space-y-1">
+                  <h1 className="text-lg font-bold">{company}</h1>
+                  <p className="flex flex-row items-center gap-2 text-sm">
+                    <BsPerson />
+                    {name}
+                  </p>
+                  <p className="flex flex-row items-center gap-2 text-sm">
+                    <BsStar />
+                    {title}
+                  </p>
+                  <p className="flex flex-row items-center gap-2 text-sm">
+                    <BsTelephone />
+                    {phone}
+                  </p>
+                  <p className="flex flex-row items-center gap-2 text-sm">
+                    <BsEnvelopeAt />
+                    {email}
+                  </p>
                 </div>
 
                 <div className="p-1">
