@@ -81,7 +81,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           <label
             htmlFor="fileInput"
             className={`w-[230px] p-2 h-[150px] flex flex-col items-center justify-center rounded-xl cursor-pointer ${
-              isDragging ? "border-dashed border-4 border-blue-500" : ""
+              isDragging ? "border-dashed border-2 border-purple-600" : ""
             }`}
           >
             {formData.logo ? (
