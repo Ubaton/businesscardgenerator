@@ -9,6 +9,31 @@ import {
 } from "react-icons/bs";
 
 const BusinessCardForm = ({ onSubmit }) => {
+  const [isDragging, setIsDragging] = useState(false);
+  const [uploadedImage, setUploadedImage] = useState(null);
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    setUploadedImage(URL.createObjectURL(file));
+
+    const updatedFormData = {
+      ...formData,
+      logo: file,
+    };
+    setFormData(updatedFormData);
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -38,8 +63,13 @@ const BusinessCardForm = ({ onSubmit }) => {
       onSubmit={handleSubmit}
       className="flex flex-col justify-center items-center text-zinc-700 w-auto pb-4"
     >
-      <div className="mb-4 rounded-xl bg-gradient-to-t from-blue-200 to-purple-200 border-4 border-purple-600">
-        <div className="relative">
+      <div
+        className={`mb-4 rounded-xl bg-gradient-to-t from-blue-200 to-purple-200 border-4 border-purple-600`}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        <div className={`relative`}>
           <input
             type="file"
             accept="image/*"
@@ -50,11 +80,19 @@ const BusinessCardForm = ({ onSubmit }) => {
           />
           <label
             htmlFor="fileInput"
-            className="w-[230px] p-2 h-[150px] flex flex-col items-center justify-center rounded-xl cursor-pointer"
+            className={`w-[230px] p-2 h-[150px] flex flex-col items-center justify-center rounded-xl cursor-pointer ${
+              isDragging ? "border-dashed border-4 border-blue-500" : ""
+            }`}
           >
             {formData.logo ? (
               <img
                 src={URL.createObjectURL(formData.logo)}
+                alt="Selected Logo"
+                className="h-20 mb-2"
+              />
+            ) : uploadedImage ? (
+              <img
+                src={uploadedImage}
                 alt="Selected Logo"
                 className="h-20 mb-2"
               />
@@ -87,7 +125,6 @@ const BusinessCardForm = ({ onSubmit }) => {
                 </svg>
               </div>
             )}
-            <span></span>
             <span className="text-zinc-700">Upload Logo</span>
             <span className="text-zinc-500 text-xs">
               Drag and drop your Logo here
