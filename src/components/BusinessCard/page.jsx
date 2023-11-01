@@ -13,6 +13,7 @@ import {
 } from "react-icons/bs";
 import ShareSVG from "@/constants/ShareSVG/page.jsx";
 import * as htmlToImage from "html-to-image";
+import ExportAsPDF from "@/constants/ExportAsPDF/page.jsx";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const cardRef = useRef();
@@ -104,7 +105,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
           />
         </div>
         <div className="w-auto space-y-6">
-          <div className="space-y-6" ref={cardRef}>
+          <div id="business-card" className="space-y-6" ref={cardRef}>
             {/* The Front of your Business Card */}
             <div
               className={`flex items-center rounded-2xl w-[320px] h-[180px] ${selectedStyle.className}`}
@@ -163,9 +164,17 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center gap-2">
             <DownloadButton cardRef={cardRef} />
+            <button
+              id="export-button"
+              className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-2 px-4 rounded-full"
+            >
+              <ExportAsPDF />
+              Export as PDF
+            </button>
           </div>
+
           <span
             className="flex items-center justify-end"
             onClick={captureBusinessCardImage}
