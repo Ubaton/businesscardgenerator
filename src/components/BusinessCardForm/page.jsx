@@ -89,7 +89,7 @@ const BusinessCardForm = ({ onSubmit }) => {
             )}
             <span></span>
             <span className="text-zinc-700">Upload Logo</span>
-            <span className="text-zinc-100 text-xs">
+            <span className="text-zinc-500 text-xs">
               Drag and drop your Logo here
             </span>
           </label>
