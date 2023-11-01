@@ -41,7 +41,7 @@ export default function Home() {
         />
       </div>
 
-      <footer className="text-center text-sm text-zinc-500 p-4">
+      <footer className="fixed bottom-4 text-center text-sm text-zinc-500">
         Powered By{" "}
         <Link
           href="https://creativemg.netlify.app/"
