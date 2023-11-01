@@ -1,10 +1,10 @@
 # Business Card Generator
 
 ### Logo
+
 <span style="display: inline-block; width: 50px; height: 50px;">
   <img src="https://github.com/Ubaton/businesscardgenerator/blob/master/public/assets/images/Business%20Card%20Generator%20Logo.PNG" alt="Business Card Generator Logo" width="50" height="50"> 
 </span>
-
 
 The Business Card Generator is a web application that allows you to create professional business card designs with various styles. It offers a simple and user-friendly interface for customizing your business card and then downloading it for printing or digital use.
 
@@ -38,19 +38,23 @@ npm install`
 
 ## Usage
 
-1.  **Style Selection**:
+1.  **Upload or Drag and drop your Logo**:
+
+    - With a live preview of you logo upon "Upload" or "Dropping" it to place.
+
+2.  **Style Selection**:
 
     - On the left-hand side, you will see a list of available styles. Click on a style to select it.
 
-2.  **Customize Your Business Card**:
+3.  **Customize Your Business Card**:
 
-    - On the right-hand side, you can customize the content of your business card. Modify the name, title, company, email, phone, and upload your logo.
+    - On the right-hand side, you can customize the content of your business card. Modify the name, title, company, email, phone, and upload your logo or drag and drop your Logo.
 
-3.  **Preview Your Business Card**:
+4.  **Preview Your Business Card**:
 
     - As you make changes, you'll see a live preview of your business card.
 
-4.  **Download Your Business Card**:
+5.  **Download Your Business Card**:
 
     - Once you are satisfied with the design, click the "Download" button to save the business card as an image.
 
