@@ -141,7 +141,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           placeholder="Company"
           value={formData.company}
           onChange={handleInputChange}
-          className="w-full border rounded-lg p-2"
+          className="w-full border rounded-lg p-2 bg-purple-200"
         />
         <BsBuildings className="absolute right-4 top-3 text-zinc-400" />
       </div>
@@ -154,7 +154,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           placeholder="Title"
           value={formData.title}
           onChange={handleInputChange}
-          className="w-full border rounded-lg p-2"
+          className="w-full border rounded-lg p-2 bg-purple-200"
         />
         <BsStar className="absolute right-4 top-3 text-zinc-400" />
       </div>
@@ -167,7 +167,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           placeholder="Your Name"
           value={formData.name}
           onChange={handleInputChange}
-          className="w-full border rounded-lg p-2"
+          className="w-full border rounded-lg p-2 bg-purple-200"
         />
         <BsPerson className="absolute right-4 top-3 text-zinc-400" />
       </div>
@@ -180,7 +180,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           placeholder="Contact Number"
           value={formData.phone}
           onChange={handleInputChange}
-          className="w-full border rounded-lg p-2"
+          className="w-full border rounded-lg p-2 bg-purple-200"
         />
         <BsTelephone className="absolute right-4 top-3 text-zinc-400" />
       </div>
@@ -193,7 +193,7 @@ const BusinessCardForm = ({ onSubmit }) => {
           placeholder="Email"
           value={formData.email}
           onChange={handleInputChange}
-          className="w-full border rounded-lg p-2"
+          className="w-full border rounded-lg p-2 bg-purple-200"
         />
         <BsEnvelopeAt className="absolute right-4 top-3 text-zinc-400" />
       </div>

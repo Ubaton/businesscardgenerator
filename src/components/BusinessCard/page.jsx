@@ -10,6 +10,7 @@ import {
   BsEnvelopeAt,
   BsTelephone,
   BsStar,
+  BsFileEarmarkPdf,
 } from "react-icons/bs";
 import ShareSVG from "@/constants/ShareSVG/page.jsx";
 import * as htmlToImage from "html-to-image";
@@ -171,7 +172,9 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-2 px-4 rounded-full"
             >
               <ExportAsPDF />
-              Export as PDF
+              <span className="flex flex-row items-center justify-center gap-2">
+                Export PDF <BsFileEarmarkPdf />
+              </span>
             </button>
           </div>
 
