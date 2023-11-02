@@ -15,6 +15,8 @@ import {
 import ShareSVG from "@/constants/ShareSVG/page.jsx";
 import * as htmlToImage from "html-to-image";
 import ExportAsPDF from "@/constants/ExportAsPDF/page.jsx";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BusinessCard = ({ name, title, company, email, phone, logo }) => {
   const cardRef = useRef();
@@ -61,7 +63,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
         .toPng(cardRef.current)
         .then((dataUrl) => {})
         .catch((error) => {
-          alert.error("Failed to capture the image:", error);
+          toast.error("Failed to capture the image:", error);
         });
     }
   };

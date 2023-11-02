@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React, { useRef } from "react";
+import * as htmlToImage from "html-to-image";
 import Share from "../../../public/assets/icons/ShareSVG.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ShareSVG = () => {
   const cardRef = useRef();
@@ -16,10 +19,10 @@ const ShareSVG = () => {
             files: [cardImage],
           });
         } else {
-          alert("Failed to create the business card image.");
+          toast.error("Failed to create the business card image.");
         }
       } else {
-        alert("Web Share API is not supported in your browser.");
+        toast.warn("Web Share API is not supported in your browser.");
       }
     } catch (error) {
       console.error("Error sharing: " + error.message);
@@ -33,14 +36,17 @@ const ShareSVG = () => {
     }
 
     try {
-      const cardBlob = await htmlToImage.toBlob(cardElement, {
-        width: cardElement.offsetWidth,
-        height: cardElement.offsetHeight,
-      });
+      const cardBlob = await htmlToImage.toBlob(cardElement);
 
-      return new File([cardBlob], "business_card.png", { type: "image/png" });
+      if (cardBlob) {
+        return new File([cardBlob], "business_card.png", { type: "image/png" });
+      } else {
+        toast.error("Failed to create the business card image.");
+        return null;
+      }
     } catch (error) {
       console.error("Error creating the card image: " + error.message);
+      toast.error("Failed to create the business card image.");
       return null;
     }
   };

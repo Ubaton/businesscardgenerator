@@ -6,6 +6,8 @@ import BusinessCardForm from "@/components/BusinessCardForm/page";
 import Pettens from "../../public/assets/images/Patten.png";
 import Image from "next/image";
 import Link from "next/link";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Home() {
   const handleFormSubmit = (formData) => {
@@ -51,6 +53,18 @@ export default function Home() {
         </Link>{" "}
         | Copyright © 2023, All Rights Reserved
       </footer>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </main>
   );
 }
