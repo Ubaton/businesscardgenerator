@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-between pb-12">
-      <h1 className="text-4xl text-center font-semibold text-transparent bg-gradient-to-r from-purple-400 via-purple-600 to-purple-900 bg-clip-text">
+      <h1 className="text-4xl text-center font-semibold text-transparent z-10 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-900 bg-clip-text">
         Business Card Generator
       </h1>
 
