@@ -111,7 +111,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
           <div id="business-card" className="space-y-6" ref={cardRef}>
             {/* The Front of your Business Card */}
             <div
-              className={`flex items-center rounded-2xl w-[320px] h-[180px] ${selectedStyle.className}`}
+              className={`flex items-center rounded-xl w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
                 <div className="text-zinc-900 space-y-1">
@@ -150,7 +150,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
             </div>
             {/* The back of the Business Card */}
             <div
-              className={`flex flex-col items-center rounded-2xl justify-center w-[320px] h-[180px] ${selectedStyle.className}`}
+              className={`flex flex-col items-center rounded-xl justify-center w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
                 {logo && (
