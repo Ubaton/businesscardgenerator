@@ -44,11 +44,11 @@ npm install`
 
 2.  **Style Selection**:
 
-    - Explore a variety of styles listed on the left-hand side. Click on your preferred style to apply it seamlessly.
+    - Explore a variety of styles listed on the center part. Click on your preferred style to apply it seamlessly.
 
 3.  **Customize Your Business Card**:
 
-    - Personalize the content of your business card on the right-hand side. Adjust details such as name, title, company, email, phone, and effortlessly upload your logo via the intuitive drag-and-drop feature.
+    - Personalize the content of your business card on the left-hand side. Adjust details such as name, title, company, email, phone, and effortlessly upload your logo via the intuitive drag-and-drop feature.
 
 4.  **Live Preview**:
 
