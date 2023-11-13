@@ -184,7 +184,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
             className="flex items-center justify-end"
             onClick={captureBusinessCardImage}
           >
-            <ShareSVG />
+            <ShareSVG cardRef={cardRef} />
           </span>
         </div>
       </div>
