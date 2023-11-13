@@ -38,25 +38,33 @@ npm install`
 
 ## Usage
 
-1.  **Upload or Drag and drop your Logo**:
+1.  **Logo Upload or Drag-and-Drop**:
 
-    - With a live preview of you logo upon "Upload" or "Dropping" it to place.
+    - Easily upload your logo by clicking the "Upload" button or simply drag and drop it for an instant live preview.
 
 2.  **Style Selection**:
 
-    - On the left-hand side, you will see a list of available styles. Click on a style to select it.
+    - Explore a variety of styles listed on the left-hand side. Click on your preferred style to apply it seamlessly.
 
 3.  **Customize Your Business Card**:
 
-    - On the right-hand side, you can customize the content of your business card. Modify the name, title, company, email, phone, and upload your logo or drag and drop your Logo.
+    - Personalize the content of your business card on the right-hand side. Adjust details such as name, title, company, email, phone, and effortlessly upload your logo via the intuitive drag-and-drop feature.
 
-4.  **Preview Your Business Card**:
+4.  **Live Preview**:
 
-    - As you make changes, you'll see a live preview of your business card.
+    - Witness real-time updates as you make changes. The live preview ensures that you have complete control over the design process.
 
-5.  **Download Your Business Card**:
+5.  **Download Your Business Card Image**:
 
-    - Once you are satisfied with the design, click the "Download" button to save the business card as an image.
+    - When satisfied with your design, a simple click on the "Download" button saves your business card as a high-quality image in the PNG format.
+
+6.  **Export as PDF**:
+
+    - Take it a step further by choosing to save your business card as a PDF file for professional and versatile usage.
+
+7.  **Effortless Sharing**:
+
+    - Share your meticulously crafted business card with friends, colleagues, or on various social platforms and through emails effortlessly. Strengthen your online presence with a few clicks.
 
 ## Contributing
 

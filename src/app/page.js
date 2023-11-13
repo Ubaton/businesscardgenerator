@@ -48,6 +48,7 @@ export default function Home() {
         <Link
           href="https://creativemg.netlify.app/"
           className="text-violet-500 hover:underline"
+          target="_blank"
         >
           Creative Mind Graphics (Pty) Ltd
         </Link>{" "}
