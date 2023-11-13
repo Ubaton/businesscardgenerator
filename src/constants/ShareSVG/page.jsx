@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import * as htmlToImage from "html-to-image";
-import Share from "../../../public/assets/icons/ShareSVG.png";
+import ShareIcon from "../../../public/assets/icons/ShareSVG.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -30,13 +30,19 @@ const ShareSVG = () => {
   };
 
   const createCardImage = async () => {
-    const cardElement = cardRef.current;
-    if (!cardElement) {
-      return null;
-    }
-
     try {
-      const cardBlob = await htmlToImage.toBlob(cardElement);
+      // This is for basic image for testing only
+      const canvas = document.createElement("canvas");
+      canvas.width = 100;
+      canvas.height = 100;
+      const context = canvas.getContext("2d");
+      context.fillStyle = "purple";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Convert the canvas to blob
+      const cardBlob = await new Promise((resolve) => {
+        canvas.toBlob(resolve, "image/png");
+      });
 
       if (cardBlob) {
         return new File([cardBlob], "business_card.png", { type: "image/png" });
@@ -45,17 +51,19 @@ const ShareSVG = () => {
         return null;
       }
     } catch (error) {
-      console.error("Error creating the card image: " + error.message);
-      toast.error("Failed to create the business card image.");
+      console.error("Error creating the card image:", error);
+      toast.error(
+        "Failed to create the business card image. Check the console for details."
+      );
       return null;
     }
   };
 
   return (
     <div>
-      <button onClick={shareBusinessCard} disabled>
+      <button onClick={shareBusinessCard}>
         <Image
-          src={Share}
+          src={ShareIcon}
           alt="Share-Icon"
           priority={true}
           width={52}

@@ -117,12 +117,12 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                 <div className="text-zinc-900 space-y-1">
                   <h1 className="text-lg font-bold">{company}</h1>
                   <p className="flex flex-row items-center gap-2 text-sm">
-                    <BsPerson />
-                    {name}
-                  </p>
-                  <p className="flex flex-row items-center gap-2 text-sm">
                     <BsStar />
                     {title}
+                  </p>
+                  <p className="flex flex-row items-center gap-2 text-sm">
+                    <BsPerson />
+                    {name}
                   </p>
                   <p className="flex flex-row items-center gap-2 text-sm">
                     <BsTelephone />
