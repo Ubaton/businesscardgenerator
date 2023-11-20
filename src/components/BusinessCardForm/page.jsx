@@ -8,6 +8,10 @@ import {
   BsStars,
   BsChevronUp,
   BsChevronDown,
+  BsInstagram,
+  BsFacebook,
+  BsTwitter,
+  BsGithub,
 } from "react-icons/bs";
 
 const BusinessCardForm = ({ onSubmit }) => {
@@ -79,7 +83,6 @@ const BusinessCardForm = ({ onSubmit }) => {
       className="flex flex-col justify-center items-center text-zinc-700 w-auto pb-4"
     >
       <div
-        id="scroll-container"
         className={`mb-4 rounded-xl bg-gradient-to-t from-blue-200 to-purple-200 border-4 border-purple-600`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -217,6 +220,8 @@ const BusinessCardForm = ({ onSubmit }) => {
           <BsEnvelopeAt className="absolute right-4 top-3 text-zinc-400" />
         </div>
 
+        {/* Social platform input fields */}
+
         <div className="mb-4 relative">
           <input
             type="text"
@@ -229,7 +234,7 @@ const BusinessCardForm = ({ onSubmit }) => {
             }
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
-          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+          <BsGithub className="absolute right-4 top-3 text-zinc-400" />
         </div>
 
         <div className="mb-4 relative">
@@ -247,7 +252,7 @@ const BusinessCardForm = ({ onSubmit }) => {
             }
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
-          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+          <BsTwitter className="absolute right-4 top-3 text-zinc-400" />
         </div>
 
         <div className="mb-4 relative">
@@ -265,7 +270,7 @@ const BusinessCardForm = ({ onSubmit }) => {
             }
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
-          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+          <BsFacebook className="absolute right-4 top-3 text-zinc-400" />
         </div>
 
         <div className="mb-4 relative">
@@ -283,15 +288,15 @@ const BusinessCardForm = ({ onSubmit }) => {
             }
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
-          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+          <BsInstagram className="absolute right-4 top-3 text-zinc-400" />
         </div>
       </div>
 
       {/* Scroll buttons */}
       <div className="flex flex-row space-x-1">
         <button
-          onClick={() => handleScroll(-1)} // Scroll up
-          className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3  rounded-full"
+          onClick={() => handleScroll(-1)}
+          className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3 rounded-full"
         >
           <BsChevronUp />
         </button>
@@ -307,8 +312,8 @@ const BusinessCardForm = ({ onSubmit }) => {
         </button>
 
         <button
-          onClick={() => handleScroll(1)} // Scroll down
-          className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3  rounded-full"
+          onClick={() => handleScroll(1)}
+          className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3 rounded-full"
         >
           <BsChevronDown />
         </button>
