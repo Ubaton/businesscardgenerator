@@ -2,8 +2,7 @@ import DownloadButton from "@/constants/DownloadButton/page";
 import React, { useState, useEffect, useRef } from "react";
 import styleOptions from "./StyleOptions/stylesOptions.js";
 import Image from "next/image";
-import { LuChevronDownCircle } from "react-icons/lu";
-import { LuChevronUpCircle } from "react-icons/lu";
+import { BsChevronUp, BsChevronDown } from "react-icons/bs";
 import {
   BsBuildings,
   BsPerson,
@@ -11,6 +10,7 @@ import {
   BsTelephone,
   BsStar,
   BsFileEarmarkPdf,
+  BsAt,
 } from "react-icons/bs";
 import ShareSVG from "@/constants/ShareSVG/page.jsx";
 import * as htmlToImage from "html-to-image";
@@ -18,7 +18,18 @@ import ExportAsPDF from "@/constants/ExportAsPDF/page.jsx";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const BusinessCard = ({ name, title, company, email, phone, logo }) => {
+const BusinessCard = ({
+  name,
+  title,
+  company,
+  email,
+  phone,
+  github,
+  twitter,
+  facebook,
+  instagram,
+  logo,
+}) => {
   const cardRef = useRef();
   const [selectedStyle, setSelectedStyle] = useState(styleOptions[0]);
   const itemsToShow = 50;
@@ -72,10 +83,9 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
     <div className="flex flex-row justify-center items-center">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-row items-center justify-center gap-5 pb-4">
-          <LuChevronDownCircle
-            className="md:hidden text-2xl"
-            onClick={moveItemsDown}
-          />
+          <button className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3 rounded-full">
+            <BsChevronDown className="md:hidden" onClick={moveItemsDown} />
+          </button>
           <div className="flex flex-col justify-center items-center">
             <div
               className="style-carousel space-y-4"
@@ -102,10 +112,9 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               ))}
             </div>
           </div>
-          <LuChevronUpCircle
-            className="md:hidden text-2xl"
-            onClick={moveItemsUp}
-          />
+          <button className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3 rounded-full">
+            <BsChevronUp className="md:hidden" onClick={moveItemsUp} />
+          </button>
         </div>
         <div className="w-auto space-y-6">
           <div id="business-card" className="space-y-6" ref={cardRef}>
@@ -114,7 +123,7 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
               className={`flex items-center rounded-xl w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
-                <div className="text-zinc-900 space-y-1">
+                <div className="text-zinc-50 space-y-1">
                   <h1 className="text-lg font-bold">{company}</h1>
                   <p className="flex flex-row items-center gap-2 text-sm">
                     <BsStar />
@@ -158,13 +167,33 @@ const BusinessCard = ({ name, title, company, email, phone, logo }) => {
                     src={URL.createObjectURL(logo)}
                     alt="Logo"
                     className="mx-auto"
-                    width={128}
-                    height={128}
+                    width={98}
+                    height={98}
                     priority={true}
                   />
                 )}
               </div>
-              <p className="text-md font-bold text-zinc-900 pt-2">{company}</p>
+              <p className="text-md font-bold text-zinc-50 pt-2">{company}</p>
+              <div className="flex flex-row items-center text-zinc-50 gap-2 text-[8px]">
+                <span className="flex flex-row items-center">
+                  <BsAt />
+                  {github}
+                </span>
+                <span className="flex flex-row items-center">
+                  <BsAt />
+                  {twitter}
+                </span>
+              </div>
+              <div className="flex flex-row items-center text-zinc-50 gap-2 text-[8px]">
+                <span className="flex flex-row items-center">
+                  <BsAt />
+                  {facebook}
+                </span>
+                <span className="flex flex-row items-center">
+                  <BsAt />
+                  {instagram}
+                </span>
+              </div>
             </div>
           </div>
           <div className="flex items-center justify-center gap-2">

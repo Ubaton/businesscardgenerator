@@ -17,13 +17,6 @@ import {
 const BusinessCardForm = ({ onSubmit }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
-  // Add state for social platforms
-  const [socialPlatforms, setSocialPlatforms] = useState({
-    github: "",
-    twitter: "",
-    facebook: "",
-    instagram: "",
-  });
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -52,6 +45,10 @@ const BusinessCardForm = ({ onSubmit }) => {
     title: "",
     company: "",
     email: "",
+    github: "",
+    twitter: "",
+    facebook: "",
+    instagram: "",
     logo: null,
     phone: "",
   });
@@ -73,7 +70,7 @@ const BusinessCardForm = ({ onSubmit }) => {
 
   const handleScroll = (direction) => {
     const container = document.getElementById("scroll-container");
-    const scrollAmount = 200; // You can adjust the scroll amount
+    const scrollAmount = 200;
     container.scrollTop += direction * scrollAmount;
   };
 
@@ -153,7 +150,7 @@ const BusinessCardForm = ({ onSubmit }) => {
       </div>
       <div
         id="scroll-container"
-        className="mb-4 relative overflow-y-scroll h-[290px] w-[240px] border p-2 rounded-lg"
+        className="mb-4 relative overflow-y-scroll h-[290px] w-[240px] border p-2 border-purple-600 rounded-lg"
       >
         <div className="mb-4 relative">
           <input
@@ -228,10 +225,8 @@ const BusinessCardForm = ({ onSubmit }) => {
             name="github"
             id="github"
             placeholder="GitHub"
-            value={socialPlatforms.github}
-            onChange={(e) =>
-              setSocialPlatforms({ ...socialPlatforms, github: e.target.value })
-            }
+            value={formData.github}
+            onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
           <BsGithub className="absolute right-4 top-3 text-zinc-400" />
@@ -243,13 +238,8 @@ const BusinessCardForm = ({ onSubmit }) => {
             name="twitter"
             id="twitter"
             placeholder="Twitter"
-            value={socialPlatforms.twitter}
-            onChange={(e) =>
-              setSocialPlatforms({
-                ...socialPlatforms,
-                twitter: e.target.value,
-              })
-            }
+            value={formData.twitter}
+            onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
           <BsTwitter className="absolute right-4 top-3 text-zinc-400" />
@@ -261,13 +251,8 @@ const BusinessCardForm = ({ onSubmit }) => {
             name="facebook"
             id="facebook"
             placeholder="Facebook"
-            value={socialPlatforms.facebook}
-            onChange={(e) =>
-              setSocialPlatforms({
-                ...socialPlatforms,
-                facebook: e.target.value,
-              })
-            }
+            value={formData.facebook}
+            onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
           <BsFacebook className="absolute right-4 top-3 text-zinc-400" />
@@ -279,13 +264,8 @@ const BusinessCardForm = ({ onSubmit }) => {
             name="instagram"
             id="instagram"
             placeholder="Instagram"
-            value={socialPlatforms.instagram}
-            onChange={(e) =>
-              setSocialPlatforms({
-                ...socialPlatforms,
-                instagram: e.target.value,
-              })
-            }
+            value={formData.instagram}
+            onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
           <BsInstagram className="absolute right-4 top-3 text-zinc-400" />
