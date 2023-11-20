@@ -237,7 +237,7 @@ const BusinessCardForm = ({ onSubmit }) => {
             type="text"
             name="twitter"
             id="twitter"
-            placeholder="TwitterX"
+            placeholder="@TwitterX"
             value={formData.twitter}
             onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"
@@ -250,7 +250,7 @@ const BusinessCardForm = ({ onSubmit }) => {
             type="text"
             name="facebook"
             id="facebook"
-            placeholder="Facebook"
+            placeholder="@Facebook"
             value={formData.facebook}
             onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"
@@ -263,7 +263,7 @@ const BusinessCardForm = ({ onSubmit }) => {
             type="text"
             name="instagram"
             id="instagram"
-            placeholder="Instagram"
+            placeholder="@Instagram"
             value={formData.instagram}
             onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"

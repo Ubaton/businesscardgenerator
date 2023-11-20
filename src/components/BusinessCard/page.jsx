@@ -11,7 +11,11 @@ import {
   BsStar,
   BsFileEarmarkPdf,
   BsAt,
+  BsInstagram,
+  BsFacebook,
+  BsGithub,
 } from "react-icons/bs";
+import { FaXTwitter } from "react-icons/fa6";
 import ShareSVG from "@/constants/ShareSVG/page.jsx";
 import * as htmlToImage from "html-to-image";
 import ExportAsPDF from "@/constants/ExportAsPDF/page.jsx";
@@ -175,22 +179,22 @@ const BusinessCard = ({
               </div>
               <p className="text-md font-bold text-zinc-50 pt-2">{company}</p>
               <div className="flex flex-row items-center text-zinc-50 gap-2 text-[8px]">
-                <span className="flex flex-row items-center">
-                  <BsAt />
+                <span className="flex flex-row items-center gap-2">
+                  <BsGithub />
                   {github}
                 </span>
-                <span className="flex flex-row items-center">
-                  <BsAt />
+                <span className="flex flex-row items-center gap-2">
+                  <FaXTwitter />
                   {twitter}
                 </span>
               </div>
               <div className="flex flex-row items-center text-zinc-50 gap-2 text-[8px]">
-                <span className="flex flex-row items-center">
-                  <BsAt />
+                <span className="flex flex-row items-center gap-2">
+                  <BsFacebook />
                   {facebook}
                 </span>
-                <span className="flex flex-row items-center">
-                  <BsAt />
+                <span className="flex flex-row items-center gap-2">
+                  <BsInstagram />
                   {instagram}
                 </span>
               </div>
