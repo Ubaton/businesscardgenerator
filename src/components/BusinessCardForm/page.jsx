@@ -6,11 +6,20 @@ import {
   BsTelephone,
   BsStar,
   BsStars,
+  BsChevronUp,
+  BsChevronDown,
 } from "react-icons/bs";
 
 const BusinessCardForm = ({ onSubmit }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
+  // Add state for social platforms
+  const [socialPlatforms, setSocialPlatforms] = useState({
+    github: "",
+    twitter: "",
+    facebook: "",
+    instagram: "",
+  });
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -58,12 +67,19 @@ const BusinessCardForm = ({ onSubmit }) => {
     onSubmit(formData);
   };
 
+  const handleScroll = (direction) => {
+    const container = document.getElementById("scroll-container");
+    const scrollAmount = 200; // You can adjust the scroll amount
+    container.scrollTop += direction * scrollAmount;
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
       className="flex flex-col justify-center items-center text-zinc-700 w-auto pb-4"
     >
       <div
+        id="scroll-container"
         className={`mb-4 rounded-xl bg-gradient-to-t from-blue-200 to-purple-200 border-4 border-purple-600`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -132,81 +148,171 @@ const BusinessCardForm = ({ onSubmit }) => {
           </label>
         </div>
       </div>
-
-      <div className="mb-4 relative">
-        <input
-          type="text"
-          name="company"
-          id="company"
-          placeholder="Company"
-          value={formData.company}
-          onChange={handleInputChange}
-          className="w-full border rounded-lg p-2 bg-purple-200"
-        />
-        <BsBuildings className="absolute right-4 top-3 text-zinc-400" />
-      </div>
-
-      <div className="mb-4 relative">
-        <input
-          type="text"
-          name="title"
-          id="title"
-          placeholder="Title"
-          value={formData.title}
-          onChange={handleInputChange}
-          className="w-full border rounded-lg p-2 bg-purple-200"
-        />
-        <BsStar className="absolute right-4 top-3 text-zinc-400" />
-      </div>
-
-      <div className="mb-4 relative">
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleInputChange}
-          className="w-full border rounded-lg p-2 bg-purple-200"
-        />
-        <BsPerson className="absolute right-4 top-3 text-zinc-400" />
-      </div>
-
-      <div className="mb-4 relative">
-        <input
-          type="text"
-          name="phone"
-          id="phone"
-          placeholder="Contact Number"
-          value={formData.phone}
-          onChange={handleInputChange}
-          className="w-full border rounded-lg p-2 bg-purple-200"
-        />
-        <BsTelephone className="absolute right-4 top-3 text-zinc-400" />
-      </div>
-
-      <div className="mb-4 relative">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleInputChange}
-          className="w-full border rounded-lg p-2 bg-purple-200"
-        />
-        <BsEnvelopeAt className="absolute right-4 top-3 text-zinc-400" />
-      </div>
-
-      <button
-        type="submit"
-        className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-2 px-4 rounded-full"
+      <div
+        id="scroll-container"
+        className="mb-4 relative overflow-y-scroll h-[290px] w-[240px] border p-2 rounded-lg"
       >
-        <span className="flex flex-row items-center gap-2">
-          Generate Card
-          <BsStars />
-        </span>
-      </button>
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="company"
+            id="company"
+            placeholder="Company"
+            value={formData.company}
+            onChange={handleInputChange}
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsBuildings className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Title"
+            value={formData.title}
+            onChange={handleInputChange}
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleInputChange}
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsPerson className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="Contact Number"
+            value={formData.phone}
+            onChange={handleInputChange}
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsTelephone className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleInputChange}
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsEnvelopeAt className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="github"
+            id="github"
+            placeholder="GitHub"
+            value={socialPlatforms.github}
+            onChange={(e) =>
+              setSocialPlatforms({ ...socialPlatforms, github: e.target.value })
+            }
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="twitter"
+            id="twitter"
+            placeholder="Twitter"
+            value={socialPlatforms.twitter}
+            onChange={(e) =>
+              setSocialPlatforms({
+                ...socialPlatforms,
+                twitter: e.target.value,
+              })
+            }
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="facebook"
+            id="facebook"
+            placeholder="Facebook"
+            value={socialPlatforms.facebook}
+            onChange={(e) =>
+              setSocialPlatforms({
+                ...socialPlatforms,
+                facebook: e.target.value,
+              })
+            }
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+
+        <div className="mb-4 relative">
+          <input
+            type="text"
+            name="instagram"
+            id="instagram"
+            placeholder="Instagram"
+            value={socialPlatforms.instagram}
+            onChange={(e) =>
+              setSocialPlatforms({
+                ...socialPlatforms,
+                instagram: e.target.value,
+              })
+            }
+            className="w-full border rounded-lg p-2 bg-purple-200"
+          />
+          <BsStar className="absolute right-4 top-3 text-zinc-400" />
+        </div>
+      </div>
+
+      {/* Scroll buttons */}
+      <div className="flex flex-row space-x-1">
+        <button
+          onClick={() => handleScroll(-1)} // Scroll up
+          className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3  rounded-full"
+        >
+          <BsChevronUp />
+        </button>
+
+        <button
+          type="submit"
+          className="bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-2 px-4 rounded-full"
+        >
+          <span className="flex flex-row items-center gap-2">
+            Generate Card
+            <BsStars />
+          </span>
+        </button>
+
+        <button
+          onClick={() => handleScroll(1)} // Scroll down
+          className="md:hidden bg-gradient-to-tr from-blue-600 to-purple-600 text-white p-3  rounded-full"
+        >
+          <BsChevronDown />
+        </button>
+      </div>
     </form>
   );
 };
