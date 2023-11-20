@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaXTwitter } from "react-icons/fa6";
+import { BsGithub } from "react-icons/bs";
 
 export default function Home() {
   const handleFormSubmit = (formData) => {
@@ -44,15 +46,29 @@ export default function Home() {
       </div>
 
       <footer className="fixed bottom-4 text-center text-sm text-zinc-500">
-        Powered By{" "}
-        <Link
-          href="https://creativemg.netlify.app/"
-          className="text-violet-500 hover:underline"
-          target="_blank"
-        >
-          Creative Mind Graphics (Pty) Ltd
-        </Link>{" "}
-        | Copyright © 2023, All Rights Reserved
+        <div className="flex flex-row items-center space-x-4">
+          <span>
+            <a href="https://twitter.com/_GoldManRay" target="_blank">
+              <FaXTwitter />
+            </a>
+          </span>
+          <span>
+            Powered By{" "}
+            <Link
+              href="https://creativemg.netlify.app/"
+              className="text-violet-500 hover:underline"
+              target="_blank"
+            >
+              Creative Mind Graphics (Pty) Ltd
+            </Link>{" "}
+            | Copyright © 2023, All Rights Reserved
+          </span>
+          <span>
+            <a href="https://github.com/Ubaton" target="_blank">
+              <BsGithub />
+            </a>
+          </span>
+        </div>
       </footer>
       <ToastContainer
         position="top-center"

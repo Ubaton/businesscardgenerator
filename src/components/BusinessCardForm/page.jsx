@@ -10,9 +10,9 @@ import {
   BsChevronDown,
   BsInstagram,
   BsFacebook,
-  BsTwitter,
   BsGithub,
 } from "react-icons/bs";
+import { FaXTwitter } from "react-icons/fa6";
 
 const BusinessCardForm = ({ onSubmit }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -237,12 +237,12 @@ const BusinessCardForm = ({ onSubmit }) => {
             type="text"
             name="twitter"
             id="twitter"
-            placeholder="Twitter"
+            placeholder="TwitterX"
             value={formData.twitter}
             onChange={handleInputChange}
             className="w-full border rounded-lg p-2 bg-purple-200"
           />
-          <BsTwitter className="absolute right-4 top-3 text-zinc-400" />
+          <FaXTwitter className="absolute right-4 top-3 text-zinc-400" />
         </div>
 
         <div className="mb-4 relative">
