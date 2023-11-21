@@ -121,7 +121,7 @@ const BusinessCard = ({
           </button>
         </div>
         <div className="w-auto space-y-6">
-          <div id="business-card" className="space-y-6" ref={cardRef}>
+          <div id="business-card" className="space-y-6 p-4" ref={cardRef}>
             {/* The Front of your Business Card */}
             <div
               className={`flex items-center rounded-xl w-[320px] h-[180px] ${selectedStyle.className}`}

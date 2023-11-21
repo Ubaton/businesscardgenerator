@@ -16,8 +16,8 @@ const styleOptions = [
     className: "bg-rose-500 p-4 rounded-lg shadow-md",
   },
   {
-    name: "White 5",
-    className: "bg-gray-50 p-4 rounded-lg shadow-md",
+    name: "Green 5",
+    className: "bg-green-500 p-4 rounded-lg shadow-md",
   },
   {
     name: "Red 6",
@@ -26,6 +26,10 @@ const styleOptions = [
   {
     name: "Amber 7",
     className: "bg-amber-500 p-4 rounded-lg shadow-md",
+  },
+  {
+    name: "Black 8",
+    className: "bg-zinc-900 p-4 rounded-lg shadow-md",
   },
 ];
 
