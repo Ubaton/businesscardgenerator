@@ -1,9 +1,12 @@
+"use client";
+
 import DownloadButton from "@/constants/DownloadButton/page";
 import React, { useState, useEffect, useRef } from "react";
 import styleOptions from "./StyleOptions/stylesOptions.js";
 import Image from "next/image";
-import { BsChevronUp, BsChevronDown } from "react-icons/bs";
 import {
+  BsChevronUp,
+  BsChevronDown,
   BsBuildings,
   BsPerson,
   BsEnvelopeAt,
@@ -32,7 +35,7 @@ const BusinessCard = ({
   twitter,
   facebook,
   instagram,
-  logo,
+  logoId,
 }) => {
   const cardRef = useRef();
   const [selectedStyle, setSelectedStyle] = useState(styleOptions[0]);
@@ -148,9 +151,9 @@ const BusinessCard = ({
                 </div>
 
                 <div className="p-1">
-                  {logo && (
+                  {logoId && (
                     <Image
-                      src={URL.createObjectURL(logo)}
+                      src={`/api/images/${logoId}`} // Replace with your actual route
                       alt="Logo"
                       className="mx-auto"
                       width={96}
@@ -166,9 +169,9 @@ const BusinessCard = ({
               className={`flex flex-col items-center rounded-xl justify-center w-[320px] h-[180px] ${selectedStyle.className}`}
             >
               <div className="flex flex-row items-center">
-                {logo && (
+                {logoId && (
                   <Image
-                    src={URL.createObjectURL(logo)}
+                    src={`/api/images/${logoId}`} // Replace with your actual route
                     alt="Logo"
                     className="mx-auto"
                     width={98}
