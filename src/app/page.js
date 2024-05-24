@@ -16,7 +16,8 @@ export default function Home() {
     setFormData(formData);
   };
 
-  // State to store form data
+  const currentYear = new Date().getFullYear();
+
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -40,8 +41,8 @@ export default function Home() {
           src={Pettens}
           alt="Petten"
           priority={true}
-          width={"full"}
-          height={"100vh"}
+          width={"2560"}
+          height={"1440"}
         />
       </div>
 
@@ -52,7 +53,7 @@ export default function Home() {
               <FaXTwitter />
             </a>
           </span>
-          <span>
+          <span className="flex items-center">
             Powered By{" "}
             <Link
               href="https://creativemg.netlify.app/"
@@ -61,7 +62,7 @@ export default function Home() {
             >
               Creative Mind Graphics (Pty) Ltd
             </Link>{" "}
-            | Copyright © 2023, All Rights Reserved
+            | Copyright © <span>{currentYear}</span>, All Rights Reserved
           </span>
           <span>
             <a href="https://github.com/Ubaton" target="_blank">
